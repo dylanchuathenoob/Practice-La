@@ -2,30 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My First Website</title>
+  <title>Practice-La</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Website</h1>
-    <p>Coded by me and hosted on GitHub Pages!</p>
+  <!-- Top navbar -->
+  <header class="top-nav">
+    <div class="logo">
+      <div class="logo-circle">P</div>
+      <span>Practice-La</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#">Courses</a>
+      <a href="#">Leaderboard</a>
+      <a href="#">Shop</a>
+    </nav>
+
+    <div class="nav-right">
+      <div class="streak">
+        🔥 <span id="streakCount">3</span> day streak
+      </div>
+      <button class="btn-outline">Sign in</button>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>Hi, I'm learning how to code and host websites using GitHub.</p>
+  <!-- Main content -->
+  <main class="main-area">
+    <!-- Left: welcome + progress -->
+    <section class="hero">
+      <h1>Keep your streak going 🔥</h1>
+      <p class="hero-sub">
+        Do one quick lesson today to keep your skills sharp.
+      </p>
+
+      <div class="progress-card">
+        <div class="progress-header">
+          <span>Today’s XP</span>
+          <span id="xpText">0 / 20 XP</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="xpBar"></div>
+        </div>
+        <button class="btn-primary" id="startLessonBtn">
+          Start practice
+        </button>
+        <p class="hint">Tip: 20 XP a day keeps the reset away 😉</p>
+      </div>
     </section>
 
-    <section>
-      <h2>Click the Button</h2>
-      <button id="clickBtn">Click me</button>
-      <p id="message"></p>
+    <!-- Right: “lesson tree” cards -->
+    <section class="lesson-grid">
+      <div class="lesson-card">
+        <div class="lesson-icon">A</div>
+        <h2>Basics 1</h2>
+        <p>Start with simple words and short sentences.</p>
+        <button class="btn-ghost lesson-btn">Start</button>
+      </div>
+
+      <div class="lesson-card locked">
+        <div class="lesson-icon">B</div>
+        <h2>Basics 2</h2>
+        <p>Unlock by finishing Basics 1.</p>
+        <button class="btn-ghost" disabled>Locked</button>
+      </div>
+
+      <div class="lesson-card">
+        <div class="lesson-icon">💬</div>
+        <h2>Practice</h2>
+        <p>Review everything you’ve learned so far.</p>
+        <button class="btn-ghost lesson-btn">Practice</button>
+      </div>
+
+      <div class="lesson-card">
+        <div class="lesson-icon">⭐</div>
+        <h2>Challenge</h2>
+        <p>Hard mode. Earn bonus XP!</p>
+        <button class="btn-ghost lesson-btn">Play</button>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© <span id="year"></span> My Website</p>
+  <footer class="footer">
+    <p>© <span id="year"></span> Practice-La · Duolingo-inspired design</p>
   </footer>
 
   <script src="script.js"></script>
