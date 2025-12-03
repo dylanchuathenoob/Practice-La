@@ -1,44 +1,46 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f4f4f4;
+// Footer year
+const yearSpan = document.getElementById("year");
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
 }
 
-header {
-  background: #24292e; /* GitHub-ish dark header */
-  color: white;
-  text-align: center;
-  padding: 2rem 1rem;
+// Fake XP system
+let xp = 0;
+const dailyGoal = 20;
+
+const xpText = document.getElementById("xpText");
+const xpBar = document.getElementById("xpBar");
+const startLessonBtn = document.getElementById("startLessonBtn");
+const streakCount = document.getElementById("streakCount");
+
+function updateXpDisplay() {
+  if (!xpText || !xpBar) return;
+  xpText.textContent = `${xp} / ${dailyGoal} XP`;
+  const percent = Math.min(100, (xp / dailyGoal) * 100);
+  xpBar.style.width = percent + "%";
 }
 
-main {
-  max-width: 800px;
-  margin: 2rem auto;
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
+if (startLessonBtn) {
+  startLessonBtn.addEventListener("click", () => {
+    // Each click = +5 XP
+    xp = Math.min(dailyGoal, xp + 5);
+    updateXpDisplay();
+
+    // Simple streak bump when you hit full XP
+    if (xp === dailyGoal && streakCount) {
+      const current = parseInt(streakCount.textContent || "0", 10);
+      streakCount.textContent = String(current + 1);
+    }
+  });
 }
 
-h2 {
-  color: #333;
-}
+// Also attach to other lesson buttons for fun
+document.querySelectorAll(".lesson-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    xp = Math.min(dailyGoal, xp + 5);
+    updateXpDisplay();
+  });
+});
 
-button {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.9;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: #555;
-}
+// Init
+updateXpDisplay();
