@@ -1,11 +1,249 @@
-// Set current year in footer
-const yearSpan = document.getElementById("year");
-yearSpan.textContent = new Date().getFullYear();
+/* ==== Base ==== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-// Simple button interaction
-const btn = document.getElementById("clickBtn");
-const message = document.getElementById("message");
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f0f4f8;
+  color: #1f2933;
+}
 
-btn.addEventListener("click", () => {
-  message.textContent = "You clicked the button! 🎉";
-});
+/* ==== Top navbar ==== */
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.75rem;
+  background: #ffffff;
+  border-bottom: 1px solid #d0d7de;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #134e4a;
+}
+
+.logo-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #22c55e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #111827;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.streak {
+  background: #ffedd5;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+}
+
+/* ==== Buttons ==== */
+.btn-primary {
+  border: none;
+  border-radius: 999px;
+  background: #22c55e;
+  color: white;
+  font-weight: 600;
+  padding: 0.7rem 1.4rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+
+.btn-outline {
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: white;
+  padding: 0.4rem 1.1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-outline:hover {
+  background: #f3f4f6;
+}
+
+.btn-ghost {
+  border-radius: 999px;
+  border: none;
+  background: #ecfdf5;
+  color: #047857;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.btn-ghost:hover {
+  background: #bbf7d0;
+}
+
+/* ==== Layout ==== */
+.main-area {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 2rem;
+}
+
+/* Left side */
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+
+.hero-sub {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.progress-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 12px 30px rgba(15, 118, 110, 0.08);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.progress-header span:first-child {
+  color: #6b7280;
+}
+
+.progress-header span:last-child {
+  font-weight: 600;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #22c55e, #65a30d);
+  transition: width 0.3s ease;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-top: 0.75rem;
+}
+
+/* Right side: lesson cards */
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.lesson-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.lesson-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #dcfce7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.lesson-card h2 {
+  font-size: 1rem;
+}
+
+.lesson-card p {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.lesson-card.locked {
+  opacity: 0.55;
+}
+
+/* ==== Footer ==== */
+.footer {
+  text-align: center;
+  padding: 1.2rem 0 1.8rem;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 800px) {
+  .main-area {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .top-nav {
+    gap: 0.75rem;
+  }
+}
