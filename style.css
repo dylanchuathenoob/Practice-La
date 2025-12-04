@@ -262,3 +262,10 @@ a.lesson-btn,
 a {
   text-decoration: none !important;
 }
+.btn-ghost,
+.btn-ghost:link,
+.btn-ghost:visited,
+.btn-ghost:hover,
+.btn-ghost:active {
+  text-decoration: none !important;
+}
