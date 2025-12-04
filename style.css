@@ -176,13 +176,14 @@ body {
   width: 360px;
   height: 360px;
   border-radius: 50%;
-  background: #fbbf24; /* yellow circle */
+  background: #fbbf24;
   position: relative;
-  box-shadow: 0 20px 60px rgba(234, 179, 8, 0.45); /* yellow shadow */
+  box-shadow: 0 20px 60px rgba(234, 179, 8, 0.45); /* 🔥 yellow glow */
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 
 /* Inner border */
 .hero-circle::before {
