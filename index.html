@@ -9,86 +9,50 @@
 <body>
   <!-- Top navbar -->
   <header class="top-nav">
-    <div class="logo">
-      <div class="logo-circle">P</div>
-      <span>Practice-La</span>
+    <div class="nav-left">
+      <div class="logo-mark">P</div>
+      <span class="logo-text">Practice•La</span>
     </div>
 
-    <nav class="nav-links">
-      <a href="#">Courses</a>
-      <a href="#">Leaderboard</a>
-      <a href="#">Shop</a>
-    </nav>
-
     <div class="nav-right">
-      <div class="streak">
-        🔥 <span id="streakCount">3</span> day streak
-      </div>
-      <button class="btn-outline">Sign in</button>
+      <button class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+      <button class="btn-link">Log in</button>
+      <button class="btn-nav-primary">Sign up</button>
     </div>
   </header>
 
-  <!-- Main content -->
-  <main class="main-area">
-    <!-- Left: welcome + progress -->
-    <section class="hero">
-      <h1>Keep your streak going 🔥</h1>
-      <p class="hero-sub">
-        Do one quick lesson today to keep your skills sharp.
+  <!-- Hero section -->
+  <main class="hero">
+    <section class="hero-left">
+      <p class="hero-eyebrow">THE BEST WAY TO STUDY</p>
+      <h1 class="hero-title">
+        <span>JAPANESE</span>
+      </h1>
+      <p class="hero-subtitle">
+        Practice Japanese vocabulary and phrases with our engaging lessons and quizzes.
       </p>
 
-      <div class="progress-card">
-        <div class="progress-header">
-          <span>Today’s XP</span>
-          <span id="xpText">0 / 20 XP</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="xpBar"></div>
-        </div>
-        <button class="btn-primary" id="startLessonBtn">
-          Start practice
-        </button>
-        <p class="hint">Tip: 20 XP a day keeps the reset away 😉</p>
+      <div class="hero-actions">
+        <a href="dashboard.html" class="btn-hero-primary">Start learning</a>
+        <a href="#" class="btn-hero-outline">Already have an account?</a>
       </div>
     </section>
 
-    <!-- Right: “lesson tree” cards -->
-    <section class="lesson-grid">
-      <div class="lesson-card">
-        <div class="lesson-icon">A</div>
-        <h2>Basics 1</h2>
-        <p>Start with simple words and short sentences.</p>
-        <a href="basics1.html" class="btn-ghost lesson-btn">Start</a>
-      </div>
-
-      <div class="lesson-card locked">
-        <div class="lesson-icon">B</div>
-        <h2>Basics 2</h2>
-        <p>Unlock by finishing Basics 1.</p>
-        <button class="btn-ghost" disabled>Locked</button>
-      </div>
-
-      <div class="lesson-card">
-        <div class="lesson-icon">💬</div>
-        <h2>Practice</h2>
-        <p>Review everything you’ve learned so far.</p>
-        <button class="btn-ghost lesson-btn">Practice</button>
-      </div>
-
-      <div class="lesson-card">
-        <div class="lesson-icon">⭐</div>
-        <h2>Challenge</h2>
-        <p>Hard mode. Earn bonus XP!</p>
-        <button class="btn-ghost lesson-btn">Play</button>
+    <section class="hero-right">
+      <div class="hero-circle">
+        <!-- You can replace this text with an image later -->
+        <span class="circle-text">日本</span>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>© <span id="year"></span> Practice-La · Duolingo-inspired design</p>
+    © <span id="year"></span> Practice-La · Learn Japanese your way.
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // small script just to update the year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-<a href="basics1.html" class="btn-ghost lesson-btn">Start</a>
