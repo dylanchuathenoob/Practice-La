@@ -247,3 +247,8 @@ body {
     gap: 0.75rem;
   }
 }
+a.btn-ghost,
+a.lesson-btn,
+.btn-ghost a {
+  text-decoration: none;
+}
