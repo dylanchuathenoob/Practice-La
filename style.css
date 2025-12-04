@@ -76,8 +76,8 @@ body {
   border-radius: 999px;
   border: none;
   padding: 0.45rem 1.4rem;
-  background: #facc15; /* yellow sign up */
-  color: #111827;
+  background: #facc15;   /* yellow */
+  color: #111827;        /* dark text */
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
@@ -117,7 +117,7 @@ body {
 }
 
 .hero-title span {
-  color: #e11d48;  /* keep J/MATH text red, or change to yellow if you want */
+  color: #facc15;   /* yellow */
   font-weight: 800;
 }
 
