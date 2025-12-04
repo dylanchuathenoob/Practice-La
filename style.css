@@ -8,10 +8,7 @@
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #111827;
-  background-color: #fffdf2;
-  /* light wave-style pattern */
-  body {
-  background-color: #ffffff;
+  background-color: #fffdf2;   /* soft light yellow background */
 }
 
 /* ===== Navbar ===== */
@@ -35,7 +32,7 @@ body {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #e11d48; /* red */
+  background: #facc15; /* yellow logo */
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -79,8 +76,8 @@ body {
   border-radius: 999px;
   border: none;
   padding: 0.45rem 1.4rem;
-  background: #e11d48;
-  color: #ffffff;
+  background: #facc15; /* yellow sign up */
+  color: #111827;
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
@@ -120,7 +117,7 @@ body {
 }
 
 .hero-title span {
-  color: #e11d48;
+  color: #e11d48;  /* keep J/MATH text red, or change to yellow if you want */
   font-weight: 800;
 }
 
@@ -153,8 +150,8 @@ body {
 }
 
 .btn-hero-primary {
-  background: #facc15;
-  color: #000;
+  background: #facc15;  /* yellow */
+  color: #111827;
   border: none;
 }
 
@@ -164,13 +161,8 @@ body {
 
 .btn-hero-outline {
   background: #ffffff;
-  color: #b91c1c;
-  border: 2px solid #f97373;
-}
-
-.btn-hero-outline {
-  border: 2px solid #facc15;
-  color: #ca8a04;
+  border: 2px solid #facc15; /* yellow border */
+  color: #ca8a04;            /* darker yellow text */
 }
 
 /* ===== Hero right graphic ===== */
@@ -184,15 +176,15 @@ body {
   width: 360px;
   height: 360px;
   border-radius: 50%;
-  background: #fbbf24;
+  background: #fbbf24; /* yellow circle */
   position: relative;
-  box-shadow: 0 20px 60px rgba(185, 28, 28, 0.45);
+  box-shadow: 0 20px 60px rgba(234, 179, 8, 0.45); /* yellow shadow */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Inner white border */
+/* Inner border */
 .hero-circle::before {
   content: "";
   position: absolute;
@@ -201,7 +193,6 @@ body {
   border: 4px solid rgba(255, 253, 230, 0.95);
 }
 
-/* You can replace this with a background-image of Japan later */
 .circle-text {
   position: relative;
   color: #ffffff;
