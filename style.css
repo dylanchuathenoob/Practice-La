@@ -259,3 +259,6 @@ a.lesson-btn,
 .lesson-btn:active {
   text-decoration: none !important;
 }
+a {
+  text-decoration: none !important;
+}
